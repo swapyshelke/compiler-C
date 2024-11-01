@@ -1,7 +1,14 @@
 // header files - io and stdlib
+#include<stdio.h>
+#include<stdlib.h>
 
 // enum named TypeSeparator
     // SEMI, OPEN_PAREN, CLOSE_PAREN
+typedef enum {
+    SEMI,
+    OPEN_PAREN,
+    CLOSE_PAREN
+}TypeSeparator;
 
 // enum named TypeKeyword
     // EXIT
