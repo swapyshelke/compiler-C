@@ -2,6 +2,11 @@
 #include<stdio.h>
 #include<stdlib.h>
 
+// ctype.h: for classifying and modifying characters
+#include<ctype.h>
+
+// 1. we need tokens
+
 // enum named TypeSeparator
     // SEMI, OPEN_PAREN, CLOSE_PAREN
 typedef enum {
@@ -42,17 +47,13 @@ typedef struct {
     TypeSeparator type;
 }TokenSeparator;
 
-// 
+// lexer function
 
-// main fnc
-int main(){
+// pass FILE *file to lexer function
+void lexer(FILE *file){
 
 
-    // file pointer of FILE data type
-    FILE *file;
-    // fopen(). pass file test.unn and read mode to file pointer
-    file = fopen("test.unn", 'r');
-    // current variable of char type, fgetc() to get single char
+     // current variable of char type, fgetc() to get single char
     char current = fgetc(file);
     // while loop till the current is not equal to EOF
     while(current != EOF) {
@@ -73,12 +74,30 @@ int main(){
         // else if current isdigit
             // pf: FOUND DIGIT
             else if(isdigit(current)){
-                printf("FOUND DIGIT");
+                printf("FOUND DIGIT: %d\n", current = '0');
             } 
         // else if current isalpha
         // print char current
-        // assign characters of fiel, into current again
+        // assign characters of file, into current again
     }
+
+}
+
+// main fnc
+int main(){
+
+
+    // file pointer of FILE data type
+    FILE *file;
+    // fopen(). pass file test.unn and read mode to file pointer
+    file = fopen("test.unn", "r");
+    
+
+
+    // call lexer function, with file parameter passing to it
+    lexer(file);
+
+   
 
 }
     
