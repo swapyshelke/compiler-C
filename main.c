@@ -78,6 +78,9 @@ void lexer(FILE *file){
             } 
         // else if current isalpha
         // print char current
+        else if(current == isalpha()){
+            printf("isalpha found");
+        }
         // assign characters of file, into current again
     }
 
